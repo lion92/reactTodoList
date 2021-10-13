@@ -6,6 +6,8 @@ import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
 import NotFound from './components/NotFound';
 import Navigation from "./components/Navigation";
 import Connection from "./components/connection";
+import Inscription from "./components/inscription";
+import Helloword from "./components/Helloword";
 
 const Root=()=>(
 
@@ -14,7 +16,8 @@ const Root=()=>(
     <Switch>
       <Route exact path="/" component={Navigation}/>
       <Route exact path="/form" component={Form}/>
-      <Route exact path="/connection" component={Connection}/>
+      <Route exact path="/login" component={Connection}/>
+      <Route exact path="/inscription" component={Inscription}/>
       <Route component={NotFound}/>
       </Switch>
   </Router>
