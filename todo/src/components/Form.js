@@ -19,15 +19,19 @@ export default function Form(props) {
   let idchange = (data) => {
     setId(data);
   };
-useEffect(() => {
-  fetchAPI();
-}, [])
-  let del = (e,data) => {
+  useEffect(() => {
+    fetchAPI();
+  }, []);
+  let del = (e, data) => {
     e.preventDefault();
     fetchdelete(data);
   };
+
+  let textebis = (data) => {
+   
+    setValue(data);
+  };
   let fetchdelete = useCallback(async (data) => {
-    
     const response = await fetch(
       "https://memo.krissclotilde.com/delete/tache",
       {
@@ -83,7 +87,6 @@ useEffect(() => {
     console.log(JSON.stringify(resbis));
   });
 
-  
   let Valuechange = (e) => {
     let a = e.target.value;
     console.log(a);
@@ -91,7 +94,6 @@ useEffect(() => {
 
     return a;
   };
- 
 
   let HandleSubmit = (e) => {
     e.preventDefault();
@@ -101,20 +103,22 @@ useEffect(() => {
   };
   return (
     <>
-      <form className="container"><div>
-        <label>
-          Essay:{idVal}
-          <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
-        </label>
-        <button onClick={HandleSubmit}>modifier</button>
-        <button onClick={fetchCreer}>creer</button></div>
-        
+      <form className="container">
+        <div>
+          <label>
+            id:{idVal}
+            <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
+          </label>
+          <button onClick={HandleSubmit}>modifier</button>
+          <button onClick={fetchCreer}>creer</button>
+        </div>
       </form>
-      <div>
+      <div className="container2">
         {textp.map((item, index) => {
           return (
             <Item
               del={del}
+              changetext={textebis}
               updatefunc={idchange}
               titre={item.titre}
               text={item.text}

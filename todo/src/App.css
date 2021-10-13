@@ -1,26 +1,44 @@
-.container{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
   display: flex;
-  background: lightblue;
+  background: yellow;
   justify-content: center;
   flex-wrap: wrap;
-align-items: center;
-position: fixed; 
-bottom: 0;
-left: 30%;
-z-index: 5;
-
-}
-input{
-background-color: green;
-width: 15em;
-height: 4em;
-}
-
-.card{
-  position: relative;
-  left: 10%;
   align-items: center;
+  position: fixed;
+  bottom: 4em;
+  left: 40%;
+  z-index: 5;
+}
+.container2 {
+  display: flex;
+
+  background: black;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container2 div {
+  height: 10em;
+  width: 10em;
+  padding: 1em;
+  margin: 1em;
+
+  text-align: center;
+}
+input {
+  background-color: green;
+  width: 15em;
+  height: 4em;
+}
+
+.card {
   background: lightgreen;
-  border:solid 1 px black;
-  max-width: 300px;
+  border: solid 5px black;
+ 
 }
