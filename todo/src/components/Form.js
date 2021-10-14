@@ -10,27 +10,54 @@ export default function Form(props) {
     { titre: "bonjour2", text: "hehe" },
     { titre: "bonjour3", text: "hehe" },
   ]);
+  ////////////////////////Rechercher/////////////
+  let recherche=(async(e)=>{
+    e.preventDefault();
+  
+    if(valueInput===""){
+        fetchAPI();
+    }else{
+      let f=await fetchAPI();
+      console.log(f);
+    let tab=f.message.filter(elemt=>elemt.text.includes(valueInput))
+      setText(tab);
+      console.log("bb");
+    }
+    
+  })
+  ////////////////////////////////////////////
+  ///////////////////fectchApi/////////////////////////
   const fetchAPI = useCallback(async () => {
     const response = await fetch("https://memo.krissclotilde.com/tout/tache");
     const resbis = await response.json();
     console.log(resbis.message);
     setText(resbis.message);
+    console.log("aa");
+    return(resbis);
+    
   }, [setText]);
+
+  /////////////////////////////////////////
+  ///////////////remonter au parent//////////////////////////////iddata/////////
   let idchange = (data) => {
     setId(data);
   };
+  //////////////////////////appel api en debut
   useEffect(() => {
     fetchAPI();
   }, []);
+  ////////////////////////////////////////supprimme des tache
   let del = (e, data) => {
     e.preventDefault();
     fetchdelete(data);
   };
-
+///////////////////////////////////////////////////////////remonter le texte
   let textebis = (data) => {
    
     setValue(data);
   };
+  /////////////////////////////
+  ///////////////////////////appel delete
   let fetchdelete = useCallback(async (data) => {
     const response = await fetch(
       "https://memo.krissclotilde.com/delete/tache",
@@ -44,11 +71,13 @@ export default function Form(props) {
         },
       }
     );
+ 
     const resbis = await response.json();
     console.log(idVal);
     console.log(resbis);
     fetchAPI();
   });
+//////////////////////insert tache
   let fetchCreer = useCallback(async (e) => {
     e.preventDefault();
     const response = await fetch(
@@ -66,6 +95,7 @@ export default function Form(props) {
     const resbis = await response.json();
     fetchAPI();
   });
+  ////////////////////update////////////
   let fetchAPIupdate = useCallback(async () => {
     const response = await fetch(
       "https://memo.krissclotilde.com/update/tache",
@@ -86,7 +116,7 @@ export default function Form(props) {
     console.log(idVal);
     console.log(JSON.stringify(resbis));
   });
-
+////////////////////////input change value
   let Valuechange = (e) => {
     let a = e.target.value;
     console.log(a);
@@ -94,23 +124,25 @@ export default function Form(props) {
 
     return a;
   };
-
-  let HandleSubmit = (e) => {
+/////////////////////////modifier
+  let modifier = (e) => {
     e.preventDefault();
     fetchAPIupdate();
     setValue("");
     setTitre("");
   };
+  /////////////////////////
   return (
     <>
-      <form className="container">
-        <div>
+      <form >
+        <div className="container">
           <label>
             id:{idVal}
             <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
           </label>
-          <button onClick={HandleSubmit}>modifier</button>
+          <button onClick={modifier}>modifier</button>
           <button onClick={fetchCreer}>creer</button>
+          <button onClick={recherche}>Rechercher</button>
         </div>
       </form>
       <div className="container2">

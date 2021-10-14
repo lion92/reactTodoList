@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './App.css';
 import Form from "./components/Form"
+import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
+import NotFound from './components/NotFound';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Root=()=>(
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Form}/>
+      <Route component={NotFound}/>
+      </Switch>
+  </Router>
+)
+
+ReactDOM.render(<Root/>, document.getElementById('root'));
+
+
 
 

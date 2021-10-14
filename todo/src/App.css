@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 20px;
+}
+body{
+  background-color: black;
 }
 .container {
   display: flex;
@@ -10,9 +14,12 @@
   flex-wrap: wrap;
   align-items: center;
   position: fixed;
-  bottom: 4em;
-  left: 40%;
+  top:0;
+  left: 0;
   z-index: 5;
+
+  
+
 }
 .container2 {
   display: flex;
@@ -21,6 +28,7 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 10em;
 }
 
 .container2 div {
@@ -28,17 +36,21 @@
   width: 10em;
   padding: 1em;
   margin: 1em;
+  
 
   text-align: center;
 }
 input {
-  background-color: green;
+  background-color: lightpink;
   width: 15em;
   height: 4em;
 }
 
 .card {
-  background: lightgreen;
+  background: yellow;
   border: solid 5px black;
  
+}
+button{
+  background-color: white;
 }
