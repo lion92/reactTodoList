@@ -6,6 +6,8 @@ import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
 import NotFound from './components/NotFound';
 
 const Root=()=>(
+
+  
   <Router>
     <Switch>
       <Route exact path="/" component={Form}/>

@@ -10,21 +10,33 @@ export default function Form(props) {
     { titre: "bonjour2", text: "hehe" },
     { titre: "bonjour3", text: "hehe" },
   ]);
+  ///////////////////////////
+  const [load, setLoad] = useState(false);
+
+  let attendre = () => {
+    setLoad(true);
+    setTimeout(() => {
+      setLoad(false);
+    }, 2000);
+    console.log(load);
+  };
+  useEffect(() => {
+    attendre();
+  }, []);
   ////////////////////////Rechercher/////////////
-  let recherche=(async(e)=>{
+  let recherche = async (e) => {
     e.preventDefault();
-  
-    if(valueInput===""){
-        fetchAPI();
-    }else{
-      let f=await fetchAPI();
+
+    if (valueInput === "") {
+      fetchAPI();
+    } else {
+      let f = await fetchAPI();
       console.log(f);
-    let tab=f.message.filter(elemt=>elemt.text.includes(valueInput))
+      let tab = f.message.filter((elemt) => elemt.text.includes(valueInput));
       setText(tab);
       console.log("bb");
     }
-    
-  })
+  };
   ////////////////////////////////////////////
   ///////////////////fectchApi/////////////////////////
   const fetchAPI = useCallback(async () => {
@@ -33,8 +45,7 @@ export default function Form(props) {
     console.log(resbis.message);
     setText(resbis.message);
     console.log("aa");
-    return(resbis);
-    
+    return resbis;
   }, [setText]);
 
   /////////////////////////////////////////
@@ -51,9 +62,8 @@ export default function Form(props) {
     e.preventDefault();
     fetchdelete(data);
   };
-///////////////////////////////////////////////////////////remonter le texte
+  ///////////////////////////////////////////////////////////remonter le texte
   let textebis = (data) => {
-   
     setValue(data);
   };
   /////////////////////////////
@@ -71,13 +81,13 @@ export default function Form(props) {
         },
       }
     );
- 
+
     const resbis = await response.json();
     console.log(idVal);
     console.log(resbis);
     fetchAPI();
   });
-//////////////////////insert tache
+  //////////////////////insert tache
   let fetchCreer = useCallback(async (e) => {
     e.preventDefault();
     const response = await fetch(
@@ -116,7 +126,7 @@ export default function Form(props) {
     console.log(idVal);
     console.log(JSON.stringify(resbis));
   });
-////////////////////////input change value
+  ////////////////////////input change value
   let Valuechange = (e) => {
     let a = e.target.value;
     console.log(a);
@@ -124,7 +134,7 @@ export default function Form(props) {
 
     return a;
   };
-/////////////////////////modifier
+  /////////////////////////modifier
   let modifier = (e) => {
     e.preventDefault();
     fetchAPIupdate();
@@ -132,9 +142,11 @@ export default function Form(props) {
     setTitre("");
   };
   /////////////////////////
+  
   return (
+    
     <>
-      <form >
+    { !load? <div><form>
         <div className="container">
           <label>
             id:{idVal}
@@ -158,7 +170,9 @@ export default function Form(props) {
             ></Item>
           );
         })}
-      </div>
+      </div></div>
+: <h1>Chargement...</h1> }
+      
     </>
   );
 }
