@@ -21,6 +21,13 @@ body{
   
 
 }
+.pmugraphcontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
 .container2 {
   display: flex;
 
