@@ -151,9 +151,8 @@ export default function Form(props) {
           <form>
         <div className="container">
           <label>
-            id:{idVal}
-            <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
-          </label>
+            id:{idVal} </label>
+          <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
           <button onClick={modifier}>modifier</button>
           <button onClick={fetchCreer}>creer</button>
           <button onClick={recherche}>Rechercher</button>
