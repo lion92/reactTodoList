@@ -1,59 +1,71 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  text-align: center;
+  font-size: 50px;
 }
-body{
-  background-color: black;
+
+body {
+    background-color: #5ec8d0;
 }
+
 .container {
-  display: flex;
-  background: yellow;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  position: fixed;
-  top:0;
-  left: 0;
-  z-index: 5;
+    display: flex;
+    background: #42a6ba;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 
-  
+
 
 }
-.container2 {
-  display: flex;
 
-  background: black;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 10em;
+.container2 {
+    display: flex;
+
+    background: black;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .container2 div {
-  height: 10em;
-  width: 10em;
-  padding: 1em;
-  margin: 1em;
-  
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    margin: 1em;
 
-  text-align: center;
+
+    text-align: center;
 }
+
 input {
-  background-color: lightpink;
-  width: 15em;
-  height: 4em;
+    background-color: #495e5e;
+    width:5em ;
+    height: 2em;
+  padding: 0.2em;
 }
 
 .card {
-  background: yellow;
-  border: solid 5px black;
- 
+    background: #3f80c5;
+    border: solid 5px #54b6a6;
+
 }
-button{
-  background-color: white;
+
+button {
+  padding: 5px;
+  margin: 1em;
+    background-color: #60ac98;
+    border-radius: 10%;
+  border:solid 1px black;
+  box-shadow: #3f80c5;
+  color: #0b3e3e;
+
 }
-h1{
-  color: bisque;
+
+h1 {
+    color: bisque;
+}
+li{color: #dcdce7
 }
