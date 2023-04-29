@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
 import Item from "./Item";
+import Navigation from "../Navigation";
 export default function Form(props) {
   let [valueInput, setValue] = useState("");
   let [valueInputTitre, setTitre] = useState("");
@@ -146,7 +146,9 @@ export default function Form(props) {
   return (
     
     <>
-    { !load? <div><form>
+    { !load? <div>
+          <Navigation></Navigation>
+          <form>
         <div className="container">
           <label>
             id:{idVal}
