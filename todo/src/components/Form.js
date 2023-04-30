@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Item from "./Item";
-import Navigation from "../Navigation";
+import Navigation from "./Navigation";
 export default function Form(props) {
   let [valueInput, setValue] = useState("");
   let [valueInputTitre, setTitre] = useState("");

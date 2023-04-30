@@ -4,8 +4,7 @@ import './App.css';
 import Form from "./components/Form"
 import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
 import NotFound from './components/NotFound';
-import Helloword from "./components/Helloword";
-import Navigation from "./Navigation";
+import Navigation from "./components/Navigation";
 import Connection from "./components/connection";
 
 const Root=()=>(

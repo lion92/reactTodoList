@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
+import Navigation from "./Navigation";
 
 const Connection = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     return (
         <div>
+
             <div id='container'>
+                <Navigation></Navigation>
                 <div id="iconLogin"/>
                 <input id='email' value={email} placeholder={'email'} onChange={e => setEmail(e.target.value)}
                        type={'text'}/>
