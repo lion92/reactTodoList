@@ -6,6 +6,7 @@ import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
 import NotFound from './components/NotFound';
 import Helloword from "./components/Helloword";
 import Navigation from "./Navigation";
+import Connection from "./components/connection";
 
 const Root=()=>(
 
@@ -14,6 +15,7 @@ const Root=()=>(
     <Switch>
       <Route exact path="/" component={Navigation}/>
       <Route exact path="/form" component={Form}/>
+      <Route exact path="/connection" component={Connection}/>
       <Route component={NotFound}/>
       </Switch>
   </Router>

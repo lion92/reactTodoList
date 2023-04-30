@@ -69,3 +69,28 @@ h1 {
 }
 li{color: #dcdce7
 }
+#container{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#iconLogin{
+    margin-top:10%;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://projet.krissclotilde.com/asset/avatar-gratuit.png);
+}
+#email,#password{
+    margin-top: 3%;
+    background-color: #a18dcd;
+
+}
+#mdpOublie{
+    margin-top: 10px;
+    font-size: 20px;
+
+}
