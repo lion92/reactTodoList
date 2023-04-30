@@ -1,17 +1,42 @@
 import { useState, useEffect, useCallback } from "react";
 import Item from "./Item";
-import Navigation from "../Navigation";
+import Navigation from "./Navigation";
 export default function Form(props) {
   let [valueInput, setValue] = useState("");
   let [valueInputTitre, setTitre] = useState("");
+  let [tabdata, setTabData] = useState([12, 19, 3, 5, 2, 3]);
+  let [lett, setLett]=useState([[]]);
+
   let [idVal, setId] = useState(-1);
-  let [textp, setText] = useState([
-    { titre: "bonjour1", text: "hehe" },
-    { titre: "bonjour2", text: "hehe" },
-    { titre: "bonjour3", text: "hehe" },
-  ]);
+  let [textp, setText] = useState([]);
   ///////////////////////////
   const [load, setLoad] = useState(false);
+
+  let pmudata = async(i=1) => {
+    let datatt = await fetchAPI();
+    let tout=[];
+
+
+   console.group(datatt.message);
+    datatt.message.forEach(element => {
+        let tab2=element.text.split(":")[1].split(";");
+    let tab3=[];
+   tab2.forEach(element => {
+     if(!isNaN(element) && element){
+     tab3.push(parseInt(element,10))
+    }
+   });
+console.log("/////OO"+tab3);
+
+tout.push(tab3);
+setLett(tout);
+ setTabData(tab3);
+    });
+ 
+    
+  };
+
+
 
   let attendre = () => {
     setLoad(true);
@@ -22,6 +47,7 @@ export default function Form(props) {
   };
   useEffect(() => {
     attendre();
+    pmudata();
   }, []);
   ////////////////////////Rechercher/////////////
   let recherche = async (e) => {
@@ -142,10 +168,8 @@ export default function Form(props) {
     setTitre("");
   };
   /////////////////////////
-  
+
   return (
-    
-    <>
     { !load? <div>
           <Navigation></Navigation>
           <form>
@@ -157,23 +181,9 @@ export default function Form(props) {
           <button onClick={fetchCreer}>creer</button>
           <button onClick={recherche}>Rechercher</button>
         </div>
-      </form>
-      <div className="container2">
-        {textp.map((item, index) => {
-          return (
-            <Item
-              del={del}
-              changetext={textebis}
-              updatefunc={idchange}
-              titre={item.titre}
-              text={item.text}
-              id={item.id}
-            ></Item>
-          );
-        })}
-      </div></div>
-: <h1>Chargement...</h1> }
-      
+      ) : (
+        <h1>Chargement...</h1>
+      )}
     </>
   );
 }

@@ -20,7 +20,6 @@ body {
 
 
 }
-
 .container2 {
     display: flex;
 
@@ -63,13 +62,60 @@ button {
   color: #0b3e3e;
 
 }
-label{
-  margin: 5px;
-  padding: 1em;
-  color: rgba(41, 80, 9, 0.98);
-}
+
 h1 {
     color: bisque;
 }
 li{color: #dcdce7
+}
+#container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    border:solid 10px #2a6271;
+    height: 50%;
+    width: 50%;
+    box-shadow: 10px 5px 5px rgba(90, 185, 171, 0.59);
+}
+#iconLogin{
+    margin-top:10%;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://projet.krissclotilde.com/asset/avatar-gratuit.png);
+}
+#email,#password{
+    margin-top: 0.3em;
+    background-color: #a18dcd;
+
+}
+#mdpOublie{
+    margin-top: 10px;
+    font-size: 20px;
+
+}
+#btnLogin{
+    border-radius: 10%;
+    margin-top: 0.3em;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    background-color: oldlace;
+    color: #60ac98;
+    padding: 0.5em;
+
+}
+#btnSignup{
+    border-radius: 10%;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    background-color: oldlace;
+    color: #60ac98;
+    padding: 0.5em;
 }

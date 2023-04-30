@@ -4,15 +4,17 @@ import './App.css';
 import Form from "./components/Form"
 import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
 import NotFound from './components/NotFound';
-import Helloword from "./components/Helloword";
+import Navigation from "./components/Navigation";
+import Connection from "./components/connection";
 
 const Root=()=>(
 
   
   <Router>
     <Switch>
-      <Route exact path="/" component={Helloword}/>
+      <Route exact path="/" component={Navigation}/>
       <Route exact path="/form" component={Form}/>
+      <Route exact path="/connection" component={Connection}/>
       <Route component={NotFound}/>
       </Switch>
   </Router>
