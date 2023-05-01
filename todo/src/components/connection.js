@@ -33,8 +33,6 @@ const Connection = () => {
 
     return (
         <div>
-
-
                 {(probleme === "connecte") ? (<Form></Form>) : ''
                 }
                 {(probleme !== "connecte") ? (
@@ -57,8 +55,6 @@ const Connection = () => {
 
                 ) : ''
                 }
-
-
         </div>
     );
 };
