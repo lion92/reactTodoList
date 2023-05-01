@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
   text-align: center;
-  font-size: 50px;
+  font-size:28px;
 }
 
 body {
     background-color: #5ec8d0;
+    margin: 10em;
 }
 
 .container {
@@ -42,7 +43,7 @@ body {
 
 input {
     background-color: #495e5e;
-    width:5em ;
+    width:10em ;
     height: 2em;
   padding: 0.2em;
 }
@@ -70,7 +71,10 @@ h1 {
 li{color: #dcdce7
 }
 #container{
+    background-color: #54b6a6;
+    border: #3f80c5;
     margin: auto;
+    margin-top: 3em;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -80,6 +84,21 @@ li{color: #dcdce7
     height: 50%;
     width: 50%;
     box-shadow: 10px 5px 5px rgba(90, 185, 171, 0.59);
+}
+#containerTitle{
+    border: #3f80c5;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    border:solid 10px #2a6271;
+    height: 50%;
+    width: 50%;
+    box-shadow: 10px 5px 5px rgba(90, 185, 171, 0.59);
+    background-color: #3f80c5;
 }
 #iconLogin{
     margin-top:10%;

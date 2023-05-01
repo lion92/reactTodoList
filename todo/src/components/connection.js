@@ -1,9 +1,11 @@
 import React, {useCallback, useState} from 'react';
 import Navigation from "./Navigation";
+import Form from "./Form";
 
 const Connection = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [probleme, setProbleme] = useState("");
     let fetchConnection = useCallback(async (e) => {
         e.preventDefault();
         const response = await fetch(
@@ -19,25 +21,44 @@ const Connection = () => {
                     "Content-Type": "application/json",
                 },
             }
-        );
+        )
+        await response.json().then(data => {
+
+            if (!isNaN(data?.id)) {
+                setProbleme('connecte')
+            }
+
+        })
     });
 
     return (
         <div>
 
-            <div id='container'>
-                <Navigation></Navigation>
-                <div id="iconLogin"/>
-                <input id='email' value={email} placeholder={'email'} onChange={e => setEmail(e.target.value)}
-                       type={'text'}/>
-                <input id='password' value={password} placeholder={'password'}
-                       onChange={e => setPassword(e.target.value)} type={'text'}/>
-                <a id="mdpOublie" href="">Mot de passe ounblié</a>
-                <button onClick={fetchConnection} id='btnLogin'>LOGIN</button>
-                <a href='/inscription'>
-                    <button id='btnSignup'>SIGNUP</button>
-                </a>
-            </div>
+
+                {(probleme === "connecte") ? (<Form></Form>) : ''
+                }
+                {(probleme !== "connecte") ? (
+                    <>
+                    <div id='container'>
+                        <Navigation></Navigation>
+                        <div id="iconLogin"/>
+                        <input id='email' value={email} placeholder={'email'} onChange={e => setEmail(e.target.value)}
+                               type={'text'}/>
+                        <input id='password' value={password} placeholder={'password'}
+                               onChange={e => setPassword(e.target.value)} type={'text'}/>
+                        <a id="mdpOublie" href="">Mot de passe ounblié</a>
+                        <button onClick={fetchConnection} id='btnLogin'>LOGIN</button>
+                        <h1>{(probleme!=='connecte'?'incorrect':'connecte')}</h1>
+                        <a href='/inscription'>
+                            SIGNUP
+                        </a>
+                    </div>
+                    </>
+
+                ) : ''
+                }
+
+
         </div>
     );
 };

@@ -4,18 +4,20 @@ import Helloword from "./Helloword";
 
 const Navigation = () => {
     return (
-        <div>
+        <div id='containerTitle'>
             <ul>
-                <NavLink to={"/login"}>
-                    <li>Login</li>
-                </NavLink>
                 <NavLink to={"/"}>
                     <li>Bienvenue</li>
                 </NavLink>
-
-                <NavLink to={"/form"}>
-                    <li>ToDoList</li>
+                <NavLink to={"/login"}>
+                    <li>Login</li>
                 </NavLink>
+
+                <NavLink to={"/inscription"}>
+                    <li>Incription</li>
+                </NavLink>
+
+
             </ul>
             <Helloword></Helloword>
         </div>
