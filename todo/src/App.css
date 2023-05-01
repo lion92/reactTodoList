@@ -161,3 +161,6 @@ body{
     background-position-Y: -700px;
 
 }
+li{
+    list-style: none;
+}
