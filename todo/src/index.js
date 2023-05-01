@@ -15,7 +15,6 @@ const Root=()=>(
   <Router>
     <Switch>
       <Route exact path="/" component={Navigation}/>
-      <Route exact path="/form" component={Form}/>
       <Route exact path="/login" component={Connection}/>
       <Route exact path="/inscription" component={Inscription}/>
       <Route component={NotFound}/>

@@ -150,3 +150,14 @@ li {
     color: #60ac98;
     padding: 0.5em;
 }
+#idLabel{
+    position: relative;
+    left: 0;
+}
+body{
+    background-image:url('fondTodo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-Y: -700px;
+
+}
