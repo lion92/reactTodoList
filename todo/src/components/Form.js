@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
 import Item from "./Item";
+
+import Navigation from "./Navigation";
+
 import BarChart from "./BarChart";
+
 export default function Form(props) {
   let [valueInput, setValue] = useState("");
   let [valueInputTitre, setTitre] = useState("");
@@ -172,6 +175,19 @@ setLett(tout);
 
   return (
     <>
+
+    { !load? <div>
+          <Navigation></Navigation>
+          <form id='formFixed'>
+            <label id="idLabel">
+            id:{idVal} </label>
+        <div className="container">
+
+          <input value={valueInput} onChange={(e) => Valuechange(e)} />{" "}
+          <button onClick={modifier}>modifier</button>
+          <button onClick={fetchCreer}>creer</button>
+          <button onClick={recherche}>Rechercher</button>
+
       {!load ? (
         <div>
           <form>
@@ -215,6 +231,7 @@ setLett(tout);
               );
             })}
           </div>
+
         </div>
       ) : (
         <h1>Chargement...</h1>
