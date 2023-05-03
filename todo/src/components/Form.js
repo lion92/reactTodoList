@@ -164,17 +164,19 @@ setLett(tout);
 
     return a;
   };
-  /////////////////////////modifier
+
   let modifier = (e) => {
     e.preventDefault();
     fetchAPIupdate();
     setValue("");
     setTitre("");
   };
-  /////////////////////////
+
 
   return (
+
     <>
+
 
     { !load? <div>
           <Navigation></Navigation>
