@@ -27,7 +27,6 @@ body {
 .container2 {
     display: flex;
 
-    background: black;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -77,9 +76,7 @@ li {
 
 #container {
     background-color: #54b6a6;
-    border: #3f80c5;
-    margin: auto;
-    margin-top: 3em;
+    margin: 3em auto auto;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -93,8 +90,7 @@ li {
 
 #containerTitle {
     border: #3f80c5;
-    margin: auto;
-    margin-top: 3em;
+    margin: 3em auto auto;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;

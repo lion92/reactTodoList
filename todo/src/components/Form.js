@@ -148,7 +148,7 @@ export default function Form(props) {
     <>
     { !load? <div>
           <Navigation></Navigation>
-          <form>
+          <form id='formFixed'>
             <label id="idLabel">
             id:{idVal} </label>
         <div className="container">

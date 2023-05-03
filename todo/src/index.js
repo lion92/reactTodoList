@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import Form from "./components/Form"
-import{BrowserRouter as Router,Switch,Route}from'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import NotFound from './components/NotFound';
 import Navigation from "./components/Navigation";
-import Connection from "./components/connection";
-import Inscription from "./components/inscription";
-import Helloword from "./components/Helloword";
+import Login from "./components/login";
+import Signup from "./components/signup";
 
 const Root=()=>(
 
@@ -15,8 +13,9 @@ const Root=()=>(
   <Router>
     <Switch>
       <Route exact path="/" component={Navigation}/>
-      <Route exact path="/login" component={Connection}/>
-      <Route exact path="/inscription" component={Inscription}/>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/inscription" component={Signup}/>
+      <Route exact path="/mdpOublie" component={Login}/>
       <Route component={NotFound}/>
       </Switch>
   </Router>

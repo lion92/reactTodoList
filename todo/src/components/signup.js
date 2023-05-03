@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import Navigation from "./Navigation";
 
-const Inscription = () => {
+const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [nom, setNom] = useState("");
@@ -48,10 +48,10 @@ const Inscription = () => {
                        onChange={e => setPassword(e.target.value)} type={'text'}/>
 
                 <button onClick={fetchInscription} id='btnSignup'>SIGNUP</button>
-                <a href='/login' >LOGIN</a>
+                <link href='/login' relative='/'>LOGIN</link>
             </div>
         </div>
     );
 };
 
-export default Inscription;
+export default Signup;

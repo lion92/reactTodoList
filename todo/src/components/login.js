@@ -1,11 +1,20 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import Navigation from "./Navigation";
 import Form from "./Form";
+import {Link} from "react-router-dom";
 
-const Connection = () => {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [probleme, setProbleme] = useState("");
+    useEffect(() => {
+        if (localStorage.getItem('test') === 'ok') {
+            setProbleme('connecte');
+            return;
+        }
+    }, []);
+
+
     let fetchConnection = useCallback(async (e) => {
         e.preventDefault();
         const response = await fetch(
@@ -26,6 +35,7 @@ const Connection = () => {
 
             if (!isNaN(data?.id)) {
                 setProbleme('connecte')
+                localStorage.setItem('test', 'ok');
             }
 
         })
@@ -33,10 +43,10 @@ const Connection = () => {
 
     return (
         <div>
-                {(probleme === "connecte") ? (<Form></Form>) : ''
-                }
-                {(probleme !== "connecte") ? (
-                    <>
+            {(probleme === "connecte") ? (<Form></Form>) : ''
+            }
+            {(probleme !== "connecte") ? (
+                <>
                     <div id='container'>
                         <Navigation></Navigation>
                         <div id="iconLogin"/>
@@ -44,19 +54,19 @@ const Connection = () => {
                                type={'text'}/>
                         <input id='password' value={password} placeholder={'password'}
                                onChange={e => setPassword(e.target.value)} type={'text'}/>
-                        <a id="mdpOublie" href="">Mot de passe ounblié</a>
+                        <Link id="mdpOublie" to="mdpOublie" relative='/'>Mot de passe ounblié</Link>
                         <button onClick={fetchConnection} id='btnLogin'>LOGIN</button>
-                        <h1>{(probleme!=='connecte'?'incorrect':'connecte')}</h1>
-                        <a href='/inscription'>
+                        <h1>{(probleme !== 'connecte' ? 'incorrect' : 'connecte')}</h1>
+                        <Link to='inscription' relative='/'>
                             SIGNUP
-                        </a>
+                        </Link>
                     </div>
-                    </>
+                </>
 
-                ) : ''
-                }
+            ) : ''
+            }
         </div>
     );
 };
 
-export default Connection;
+export default Login;
