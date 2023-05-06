@@ -9,12 +9,8 @@ const Navigation = () => {
                 <NavLink to={"/"}>
                     <li>Bienvenue</li>
                 </NavLink>
-                <NavLink to={"/login"}>
-                    <li>Login</li>
-                </NavLink>
-
-                <NavLink to={"/inscription"}>
-                    <li>Incription</li>
+                <NavLink to={"/form"}>
+                    <li>Gestion des taches</li>
                 </NavLink>
 
 
