@@ -9,7 +9,7 @@ const Connection = () => {
     let fetchConnection = useCallback(async (e) => {
         e.preventDefault();
         const response = await fetch(
-            "http://localhost:3000/connection/login",
+            "http://krisscode.fr/connection/login",
             {
                 method: "POST",
                 body: JSON.stringify({
