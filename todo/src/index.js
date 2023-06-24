@@ -7,7 +7,7 @@ import NotFound from './components/NotFound';
 import Navigation from "./components/Navigation";
 import Connection from "./components/connection";
 import Inscription from "./components/inscription";
-import Helloword from "./components/Helloword";
+
 
 const Root=()=>(
 
